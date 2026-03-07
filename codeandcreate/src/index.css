@@ -2,13 +2,16 @@
 
 @import "tailwindcss";
 
-body {
-  font-family: outfit;
-  background-color: #000000;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: outfit;
+  background-color: #000000;
+  overflow-x: hidden;
+}
 
+* {
+  box-sizing: border-box;
+}

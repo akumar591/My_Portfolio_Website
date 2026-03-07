@@ -141,7 +141,7 @@ const About = () => {
               key={index}
               variants={card}
               whileHover={{ y: -6 }}
-              className="border border-white/10 rounded-xl py-6 px-4 backdrop-blur-sm hover:border-sky-400/40 transition"
+              className="border border-white/25 rounded-xl py-6 px-4 backdrop-blur-sm hover:border-sky-400/50 transition"
             >
               <h3 className="text-3xl sm:text-4xl text-sky-400 font-semibold">
                 <CountUp end={item.num} duration={2} />+

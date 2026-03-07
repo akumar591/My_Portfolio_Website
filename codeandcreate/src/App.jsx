@@ -1,4 +1,3 @@
-// App.jsx
 import React from "react";
 import Navbar from "./Components/Navbar";
 import Home from "./Sections/Home";
@@ -9,30 +8,33 @@ import Expertise from "./Sections/Expertise";
 import Footer from "./Components/Footer";
 import Slider from "./Components/Slider";
 
-
 function App() {
   return (
-    <div className="App scroll-smooth">
+    <div className="App overflow-x-hidden">
       <Navbar />
       <Slider />
-      {/* Sections with IDs for scroll targets */}
+
       <section id="home">
         <Home />
       </section>
+
       <section id="about">
         <About />
       </section>
+
       <section id="contact">
         <Contact />
-      </section>   
+      </section>
+
       <section id="projects">
         <Project />
       </section>
+
       <section id="expertise">
         <Expertise />
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
