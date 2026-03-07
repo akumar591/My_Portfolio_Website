@@ -7,13 +7,14 @@ import Project from "./Sections/Projects";
 import Contact from "./Sections/Contact";
 import Expertise from "./Sections/Expertise";
 import Footer from "./Components/Footer";
+import Slider from "./Components/Slider";
 
 
 function App() {
   return (
     <div className="App scroll-smooth">
       <Navbar />
-
+      <Slider />
       {/* Sections with IDs for scroll targets */}
       <section id="home">
         <Home />

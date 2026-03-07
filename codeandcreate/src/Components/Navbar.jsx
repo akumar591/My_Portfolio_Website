@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
-import Slider from "./Slider";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -34,6 +33,7 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-black lg:bg-transparent px-[4%] pt-8 pb-4 flex items-center justify-between">
+        
         {/* Logo */}
         <img
           src={assets.logo}
@@ -62,9 +62,6 @@ const Navbar = () => {
         >
           <img src={assets.menu_icon} className="w-7" alt="menu" />
         </button>
-
-        {/* Optional Slider */}
-        <Slider />
       </div>
 
       {/* Overlay */}
