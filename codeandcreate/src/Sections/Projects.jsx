@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaGithub,
@@ -23,7 +23,7 @@ const projects = [
     title: "ShopZen",
     subTitle: "AI",
     description:
-      "AI-powered e-commerce platform with a modern, responsive UI for seamless online shopping. Built to demonstrate strong frontend development and performance optimization.",
+      "AI-powered e-commerce platform with a modern, responsive UI for seamless online shopping.",
     image: assets.project_2,
     github: "https://github.com/akumar591/ShopZenAI_MERN_Project",
     live: "https://shop-zen-ai-mern-project.vercel.app/",
@@ -32,7 +32,7 @@ const projects = [
     title: "Gold -",
     subTitle: "Future of India",
     description:
-      "Gold – The Future of India is a platform designed to support and showcase talented athletes. It highlights achievements and promotes sports culture through a modern, responsive interface.",
+      "Platform designed to support and showcase talented athletes.",
     image: assets.project_3,
     github: "https://github.com/akumar591/Gold_The_future_Of_India",
     live: "https://gold-the-future-of-india.vercel.app/",
@@ -41,7 +41,7 @@ const projects = [
     title: "Haven",
     subTitle: "X",
     description:
-      "A modern real estate website with a clean UI for showcasing properties. Features a simple enquiry form for quick user inquiries and contact.",
+      "Modern real estate website with property showcase and enquiry form.",
     image: assets.project_4,
     github: "https://github.com/akumar591/Haven-x_Project-js",
     live: "https://haven-x.netlify.app/",
@@ -49,43 +49,19 @@ const projects = [
   {
     title: "Credgeniee",
     subTitle: "Finances",
-    description: "Credgeniee is a fintech platform designed to simplify loans, investments, and financial management in one place.",
+    description:
+      "Fintech platform designed to simplify loans and financial management.",
     image: assets.project_5,
-    github:"https://github.com/akumar591/Credgeniee-Your-Trusted-Partner/tree/main/frontend",
+    github:
+      "https://github.com/akumar591/Credgeniee-Your-Trusted-Partner/tree/main/frontend",
     live: "https://credgeniee-your-trusted-partner.vercel.app/",
   },
 ];
 
-const textVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 60,
-      damping: 15,
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const imageVariant = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
-const ProjectCard = ({ project, direction }) => {
+const ProjectCard = memo(({ project, direction }) => {
   const variants = {
     enter: (direction) => ({
-      x: direction > 0 ? 300 : -300,
+      x: direction > 0 ? 80 : -80,
       opacity: 0,
     }),
     center: {
@@ -93,7 +69,7 @@ const ProjectCard = ({ project, direction }) => {
       opacity: 1,
     },
     exit: (direction) => ({
-      x: direction < 0 ? 300 : -300,
+      x: direction < 0 ? 80 : -80,
       opacity: 0,
     }),
   };
@@ -101,37 +77,32 @@ const ProjectCard = ({ project, direction }) => {
   return (
     <motion.div
       key={project.title}
-      className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl p-6 md:p-10"
       custom={direction}
       variants={variants}
       initial="enter"
       animate="center"
       exit="exit"
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.28 }}
+      className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl p-6 md:p-10"
     >
-      <motion.div
-        className="md:w-1/2 space-y-4 text-left text-white"
-        variants={textVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
+      {/* Text */}
+      <div className="md:w-1/2 space-y-4 text-left text-white">
         <div className="text-2xl sm:text-3xl">
           <Title text1={project.title} text2={project.subTitle} />
         </div>
 
-        <motion.p className="text-base md:text-lg text-white/80">
+        <p className="text-base md:text-lg text-white/80">
           {project.description}
-        </motion.p>
+        </p>
 
         <div className="flex flex-wrap items-center gap-6 mt-4">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 mt-4 hover:text-sky-400 transition text-sm md:text-base"
+            className="flex items-center gap-2 hover:text-sky-400 transition text-sm md:text-base"
           >
-            <FaGithub size={22} />
+            <FaGithub size={20} />
             View Repository
           </a>
 
@@ -139,30 +110,28 @@ const ProjectCard = ({ project, direction }) => {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 mt-4 text-sky-400 hover:text-sky-600 transition text-sm md:text-base"
+            className="flex items-center gap-2 text-sky-400 hover:text-sky-600 transition text-sm md:text-base"
           >
-            <FaExternalLinkAlt size={22} />
+            <FaExternalLinkAlt size={20} />
             Explore
           </a>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        className="lg:w-full md:w-1/2 mt-6 md:mt-0"
-        variants={imageVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
+      {/* Image */}
+      <div className="lg:w-full md:w-1/2 mt-6 md:mt-0">
         <img
           src={project.image}
           alt={project.title}
-          className="rounded-lg w-full max-h-[400px] h-auto shadow-lg object-cover"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          className="rounded-lg w-full max-h-[400px] h-auto shadow-lg object-cover will-change-transform"
         />
-      </motion.div>
+      </div>
     </motion.div>
   );
-};
+});
 
 const ProjectSlider = () => {
   const [[current, direction], setCurrent] = useState([0, 0]);
@@ -173,21 +142,10 @@ const ProjectSlider = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
-      className="w-full min-h-screen flex flex-col items-center justify-center bg-transparent px-4 py-20 relative overflow-hidden"
-    >
+    <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
+      
       {/* Slider */}
-      <motion.div
-        className="relative w-full flex justify-center"
-        initial={{ scale: 0.95, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
+      <div className="relative w-full flex justify-center">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <ProjectCard
             key={projects[current].title}
@@ -195,46 +153,35 @@ const ProjectSlider = () => {
             direction={direction}
           />
         </AnimatePresence>
-      </motion.div>
+      </div>
 
       {/* Navigation */}
-      <motion.div
-        className="flex items-center justify-between w-full max-w-6xl mt-10 px-4"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {/* Prev */}
-        <motion.button
+      <div className="flex items-center justify-between w-full max-w-6xl mt-10 px-4">
+
+        <button
           onClick={() => paginate(-1)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
           className="text-white px-3 py-2 rounded hover:text-sky-400 transition flex items-center"
         >
           <FaArrowLeft className="text-lg md:mr-2" />
           <span className="hidden md:inline">Prev</span>
-        </motion.button>
+        </button>
 
-        {/* Counter */}
         <div className="text-[aliceblue] text-sm md:text-base">
           <span className="text-sky-500">Project</span> {current + 1}
           <span className="text-sky-500"> / </span>
           {total}
         </div>
 
-        {/* Next */}
-        <motion.button
+        <button
           onClick={() => paginate(1)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
           className="text-white px-3 py-2 rounded hover:text-sky-400 transition flex items-center"
         >
           <span className="hidden md:inline">Next</span>
           <FaArrowRight className="text-lg md:ml-2" />
-        </motion.button>
-      </motion.div>
-    </motion.div>
+        </button>
+
+      </div>
+    </div>
   );
 };
 
