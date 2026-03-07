@@ -6,9 +6,9 @@ import md_circle from "./sphere_md.png";
 import earth_img from "./earthlights.jpg";
 import project_1 from "./Project_1.png";
 import project_2 from "./Project_2.png";
-import project_3 from "./project_3.png";
-import project_4 from "./project_4.png";
-import project_5 from "./project_5.png";
+import project_3 from "./Project_3.png";
+import project_4 from "./Project_4.png";git add .
+import project_5 from "./Project_5.png";
 
 export const assets = {
   logo,
