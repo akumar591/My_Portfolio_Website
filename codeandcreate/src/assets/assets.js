@@ -5,7 +5,7 @@ import sm_circle from "./sphere_sm.png";
 import md_circle from "./sphere_md.png";
 import earth_img from "./earthlights.jpg";
 import project_1 from "./Project_1.png";
-import project_2 from "./project_2.png";
+import project_2 from "./Project_2.png";
 import project_3 from "./project_3.png";
 import project_4 from "./project_4.png";
 import project_5 from "./project_5.png";
