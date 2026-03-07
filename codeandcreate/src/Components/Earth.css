@@ -1,0 +1,40 @@
+#earth {
+  background: url("../assets/earthlights.jpg") repeat-x;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  animation: rotate-earth 30s linear infinite;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 40px rgba(53, 52, 52, 0.5),
+    inset -40px 0 80px rgba(51, 76, 240, 0.2),
+    inset 20px 0 40px rgba(39, 84, 248, 0.078);
+}
+
+#earth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(5, 5, 118, 0.173),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+@keyframes rotate-earth {
+  from {
+    background-position-x: -100%;
+    
+  }
+  to {
+    background-position-x: 0%;
+  }
+}
