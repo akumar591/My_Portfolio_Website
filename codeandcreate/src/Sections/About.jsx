@@ -30,10 +30,10 @@ const card = {
 
 const About = () => {
   const handleDownload = () => {
-    const fileUrl = "/ABHISHEK_KUMAR_MERN_STACK_CV.pdf";
+    const fileUrl = "/Abhishek_Kumar_FullStack_Developer.pdf";
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = "ABHISHEK_KUMAR_MERN_STACK_CV.pdf";
+    link.download = "Abhishek_Kumar_FullStack_Developer.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
