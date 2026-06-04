@@ -48,7 +48,7 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/abhishek-shrivastav-35b483311"
+            href="https://www.linkedin.com/in/abhishek-full-stack-dev/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-[aliceblue] text-sky-500 transition"

@@ -45,7 +45,7 @@ const ContactInfo = () => {
           <FaGithub size={22} />
         </a>
         <a
-          href="https://www.linkedin.com/in/abhishek-shrivastav-35b483311"
+          href="https://www.linkedin.com/in/abhishek-full-stack-dev/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-sky-400 transition"
