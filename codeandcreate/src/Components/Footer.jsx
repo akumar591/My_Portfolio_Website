@@ -7,15 +7,14 @@ const Footer = () => {
     <footer className="relative bg-[#0a0a0a] text-[aliceblue] px-4 sm:px-12 py-4 mt-0 border-t border-sky-500/30 shadow-inner shadow-sky-900/20">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-10 sm:gap-0">
         {/* Left: Logo & Tagline */}
-        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+        <div className="text-center sm:text-left">
           <img
             src={assets.logo}
-            alt="Code & Create Logo"
-            className="w-[220px] sm:w-[250px] cursor-pointer"
+            alt=""
+            className="w-[max(20%,250px)] cursor-pointer tracking-wide"
           />
-
           <p className="text-sm text-sky-500 mt-1">
-            MERN Stack Developer | Passionate about web experiences
+            Full Stack Developer | Crafting modern software experiences
           </p>
         </div>
 

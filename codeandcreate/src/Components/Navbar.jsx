@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
+import Slider from "./Slider";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -32,19 +33,17 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-black lg:bg-transparent px-[5%] pt-6 pb-2 flex items-center justify-between">
-
+      <div className="fixed top-0 left-0 w-full z-50 bg-black lg:bg-transparent px-[4%] pt-8 pb-4 flex items-center justify-between">
         {/* Logo */}
         <img
           src={assets.logo}
-          className="w-[240px] sm:w-[240px] md:w-[250px] lg:w-[260px] cursor-pointer object-contain"
+          className="w-[max(20%,200px)] sm:w-[220px] md:w-[250px] cursor-pointer object-contain"
           alt="logo"
         />
 
-        {/* Desktop Contact Button */}
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-7">
           <div className="text-[18px] border text-[aliceblue] p-1 px-5 rounded cursor-pointer text-center relative overflow-hidden group transition-all duration-300">
-
             <span className="absolute inset-0 bg-[aliceblue] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0"></span>
 
             <a
@@ -53,7 +52,6 @@ const Navbar = () => {
             >
               Contact
             </a>
-
           </div>
         </div>
 
@@ -65,6 +63,8 @@ const Navbar = () => {
           <img src={assets.menu_icon} className="w-7" alt="menu" />
         </button>
 
+        {/* Optional Slider */}
+        <Slider />
       </div>
 
       {/* Overlay */}
@@ -81,7 +81,6 @@ const Navbar = () => {
           showMobileMenu ? "translate-x-0" : "translate-x-full"
         }`}
       >
-
         {/* Close Button */}
         <div className="flex justify-end p-6">
           <button onClick={() => setShowMobileMenu(false)}>
@@ -103,7 +102,6 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
       </div>
     </>
   );

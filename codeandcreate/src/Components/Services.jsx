@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaJava } from "react-icons/fa";
+
 import {
   SiReact,
   SiTailwindcss,
   SiJavascript,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
+  SiSpringboot,
+  SiMysql,
   SiVercel,
   SiGithub,
 } from "react-icons/si";
@@ -16,21 +17,23 @@ const expertiseTimeline = [
     title: "Frontend Development",
     color: "from-cyan-400 to-blue-500",
     description:
-      "Crafting responsive, accessible UIs with React, TailwindCSS, and JavaScript.",
+      "Crafting responsive and modern user interfaces with React, Tailwind CSS, and JavaScript.",
     icons: [SiReact, SiTailwindcss, SiJavascript],
   },
+
   {
     title: "Backend Development",
     color: "from-purple-400 to-pink-500",
     description:
-      "Building secure, scalable APIs with Node.js, Express, and MongoDB.",
-    icons: [SiNodedotjs, SiExpress, SiMongodb],
+      "Building secure and scalable backend systems with Java, Spring Boot, REST APIs, and databases.",
+    icons: [FaJava, SiSpringboot, SiMysql],
   },
+
   {
     title: "Deployment & Hosting",
     color: "from-yellow-300 to-orange-400",
     description:
-      "CI/CD, hosting, and domain setup using Vercel, GitHub, and other platforms.",
+      "Version control, deployment, and hosting using GitHub, Vercel, and modern development workflows.",
     icons: [SiVercel, SiGithub],
   },
 ];

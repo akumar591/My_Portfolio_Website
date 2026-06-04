@@ -1,29 +1,31 @@
+/* Hide completely on small + medium screens */
 .slider {
-  display: none;
-  position: fixed;
-  left: -9999px; /* mobile flash prevention */
+  display: none !important;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 /* Show only on large screens */
 @media (min-width: 1024px) {
-
   .slider {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     position: fixed;
-
-    /* CENTER FIX */
-    top: 50%;
-    transform: translateY(-50%);
-
+    top: 0;
     left: 4rem;
     z-index: 10;
-
+    height: calc(100vh - 6.25rem);
     align-items: flex-start;
+    visibility: visible;
+    overflow: visible;
   }
 
   .slider.sides_Left {
     left: 4rem;
+    height: calc(100vh - 6.25rem);
     align-items: flex-start;
   }
 
@@ -35,7 +37,9 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    position: relative;
+    position: absolute;
+    top: 250px;
+    left: 0;
   }
 
   .slider .nav__wrapper #side_nav:before {
@@ -73,20 +77,27 @@
     transition: all 0.5s ease-in-out;
   }
 
-  .slider .nav__wrapper #side_nav li:nth-child(2):hover ~ .line {
+  .slider .nav__wrapper #side_nav li:nth-child(2):hover ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(2).active ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(2).passedSection:hover ~ .line {
     transform: translateY(50px);
   }
 
-  .slider .nav__wrapper #side_nav li:nth-child(3):hover ~ .line {
+  .slider .nav__wrapper #side_nav li:nth-child(3):hover ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(3).active ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(3).passedSection:hover ~ .line {
     transform: translateY(100px);
   }
 
-  .slider .nav__wrapper #side_nav li:nth-child(4):hover ~ .line {
+  .slider .nav__wrapper #side_nav li:nth-child(4):hover ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(4).active ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(4).passedSection:hover ~ .line {
     transform: translateY(150px);
   }
 
-  .slider .nav__wrapper #side_nav li:nth-child(5):hover ~ .line {
+  .slider .nav__wrapper #side_nav li:nth-child(5):hover ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(5).active ~ .line,
+  .slider .nav__wrapper #side_nav li:nth-child(5).passedSection:hover ~ .line {
     transform: translateY(200px);
   }
-
 }

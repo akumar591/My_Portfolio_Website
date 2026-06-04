@@ -30,10 +30,10 @@ const card = {
 
 const About = () => {
   const handleDownload = () => {
-    const fileUrl = "/Abhishek_Kumar_FullStack_Developer.pdf";
+    const fileUrl = "/Abhishek Kumar_Java_full_Stack.pdf";
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = "Abhishek_Kumar_FullStack_Developer.pdf";
+    link.download = "Abhishek Kumar_Java_full_Stack.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -86,8 +86,12 @@ const About = () => {
         >
           Hi, I'm{" "}
           <span className="text-white font-semibold">Abhishek Shrivastav</span>.
-          I enjoy turning{" "}
-          <span className="text-sky-400">ideas into digital experiences</span>.
+          I enjoy transforming{" "}
+          <span className="text-sky-400">
+            complex ideas into scalable software solutions and seamless digital
+            experiences
+          </span>{" "}
+          through clean code and modern technologies.
         </motion.p>
 
         {/* Accent Content */}
@@ -106,9 +110,11 @@ const About = () => {
             <span className="absolute right-0 top-0 h-full w-[2px] bg-gradient-to-b from-indigo-400/70 to-purple-500/60 rounded-full transition-all duration-300 group-hover:w-[3px]"></span>
 
             <p className="text-gray-300 text-sm sm:text-base">
-              I build modern applications using the{" "}
-              <span className="text-sky-400 font-medium">MERN stack</span>.
-              Focusing on clean UI, scalable backend systems, and smooth user
+              I build modern full-stack applications with{" "}
+              <span className="text-sky-400 font-medium">
+                Java, Spring Boot, and React
+              </span>
+              . Focusing on scalable systems, clean code, and seamless user
               experiences.
             </p>
           </motion.div>
@@ -124,9 +130,11 @@ const About = () => {
             <span className="absolute right-0 top-0 h-full w-[2px] bg-gradient-to-b from-indigo-400/70 to-purple-500/60 rounded-full transition-all duration-300 group-hover:w-[3px]"></span>
 
             <p className="text-gray-400 text-sm sm:text-base">
-              Currently exploring how{" "}
-              <span className="text-sky-400">AI-powered tools</span> can enhance
-              development workflows and help create smarter web products.
+              Continuously exploring{" "}
+              <span className="text-sky-400">
+                Java, Spring Boot, AI-powered tools
+              </span>{" "}
+              and modern technologies to build smarter software solutions.
             </p>
           </motion.div>
         </motion.div>
@@ -141,7 +149,7 @@ const About = () => {
               key={index}
               variants={card}
               whileHover={{ y: -6 }}
-              className="border border-white/25 rounded-xl py-6 px-4 backdrop-blur-sm hover:border-sky-400/50 transition"
+              className="border border-white/10 rounded-xl py-6 px-4 backdrop-blur-sm hover:border-sky-400/40 transition"
             >
               <h3 className="text-3xl sm:text-4xl text-sky-400 font-semibold">
                 <CountUp end={item.num} duration={2} />+
