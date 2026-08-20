@@ -7,9 +7,11 @@ import Contact from "./Sections/Contact";
 import Expertise from "./Sections/Expertise";
 import Footer from "./Components/Footer";
 import Slider from "./Components/Slider";
+import DisableInspect from "./Components/DisableInspect";
 
 function App() {
   return (
+    <DisableInspect>
     <div className="App overflow-x-hidden">
       <Navbar />
       <Slider />
@@ -36,6 +38,7 @@ function App() {
 
       <Footer />
     </div>
+    </DisableInspect>
   );
 }
 
